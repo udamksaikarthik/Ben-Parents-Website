@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Rachel Sebastian & Co.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assests/css/styles.css">
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: var(--white);
+      padding: 4.5rem 0 3.5rem;
+    }
+
+    .page-title {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      margin-bottom: 0.8rem;
+      color: var(--white);
+    }
+
+    .page-subtitle {
+      max-width: 720px;
+      color: rgba(255,255,255,0.86);
+      margin-bottom: 0;
+      font-size: 1.05rem;
+    }
+
+    .section-tight {
+      padding: 4rem 0;
+    }
+
+    .content-card {
+      background: var(--white);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-card);
+      height: 100%;
+    }
+
+    .solicitor-card {
+      background: linear-gradient(180deg, #ffffff 0%, #fbfaf7 100%);
+    }
+
+    .solicitor-label {
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.82rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .solicitor-name {
+      color: var(--primary);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 0.3rem;
+    }
+
+    .solicitor-role {
+      color: var(--secondary);
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .profile-highlight {
+      background: var(--secondary-soft);
+      border: 1px solid rgba(214, 179, 106, 0.25);
+      border-radius: 1rem;
+      padding: 1rem 1.1rem;
+      margin-top: 1.25rem;
+    }
+
+    .profile-highlight h3 {
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .policy-grid-title {
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .accordion-item {
+      border: 1px solid var(--border-soft);
+      border-radius: 1rem !important;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 24px rgba(16, 44, 37, 0.05);
+    }
+
+    .accordion-button {
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--white);
+      box-shadow: none !important;
+      padding: 1.15rem 1.25rem;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background: var(--secondary-soft);
+      color: var(--primary);
+    }
+
+    .accordion-body {
+      color: var(--text-muted);
+      padding: 1.25rem;
+    }
+
+    .accordion-body ul,
+    .accordion-body ol {
+      padding-left: 1.2rem;
+      margin-bottom: 0;
+    }
+
+    .accordion-body li {
+      margin-bottom: 0.65rem;
+    }
+
+    .info-panel {
+      background: var(--white);
+      border: 1px solid var(--border-soft);
+      border-radius: 1.25rem;
+      padding: 1.4rem;
+      box-shadow: var(--shadow-card);
+      height: 100%;
+    }
+
+    .info-panel h3 {
+      color: var(--primary);
+      font-size: 1.45rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .info-panel p,
+    .info-panel li {
+      color: var(--text-muted);
+    }
+
+    .info-panel ul {
+      padding-left: 1.1rem;
+      margin-bottom: 0;
+    }
+
+    .info-panel li {
+      margin-bottom: 0.65rem;
+    }
+
+    .link-legal {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .print-note {
+      background: linear-gradient(135deg, var(--primary) 0%, #245748 100%);
+      color: var(--white);
+      border-radius: 1.4rem;
+      padding: 1.75rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .print-note h3 {
+      color: var(--white);
+      font-size: 1.8rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .print-note p {
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 991.98px) {
+      .section-tight {
+        padding: 3.5rem 0;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .page-hero {
+        padding: 3.5rem 0 3rem;
+      }
+
+      .content-card,
+      .info-panel,
+      .print-note {
+        padding: 1.2rem;
+      }
+
+      .page-subtitle {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar py-2">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <div>Trusted legal support in Gosforth, Newcastle upon Tyne</div>
+      <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-center text-md-start">
+        <a href="tel:01912365308">Tel: 0191 236 5308</a>
+        <a href="mailto:info@rslegal.co.uk">Email: info@rslegal.co.uk</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container py-2">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-name">Rachel Sebastian & Co. Solicitors</span>
+        <span class="brand-subtitle">Established legal support since 1990</span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-3 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="ms-lg-3">
+          <a href="contact.html" class="btn btn-brand">Book a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-eyebrow text-white-50">About the Firm</span>
+        <h1 class="page-title">Experienced legal support with a personal approach.</h1>
+        <p class="page-subtitle">
+          Learn more about Rachel J. Sebastian, the firm’s approach to client care, and the complaints procedure available to all clients.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="content-card solicitor-card">
+              <div class="solicitor-label">Solicitor</div>
+              <h2 class="solicitor-name">Rachel J. Sebastian</h2>
+              <div class="solicitor-role">Rachel Sebastian &amp; Co. Solicitors</div>
+
+              <p class="muted-copy">
+                I graduated from University of Westminster and trained in London. After qualifying in 2006, I continued working in London as the head of Conveyancing Department for several years before moving to the North East.
+              </p>
+
+              <p class="muted-copy">
+                I continued working as a property lawyer in the North East in many leading law firms over the years and also did a lot of private works for private clients.
+              </p>
+
+              <p class="muted-copy mb-0">
+                Glynis and I have worked together for sometime now and I am pleased to take over her practice and to build on its success. I look forward to working with established and new clients over the coming years.
+              </p>
+
+              <div class="profile-highlight">
+                <h3>Client-focused legal care</h3>
+                <p class="mb-0 text-muted">
+                  The firm is committed to providing clear guidance, practical support and a professional service that helps clients feel informed throughout the process.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="info-panel">
+              <h3>Our Complaints Policy</h3>
+              <p class="mb-3">
+                We want to give you the best possible service. However, if at any point you become unhappy or concerned about the service we have provided then you should inform us immediately, so that we can do our best to resolve the problem.
+              </p>
+              <p class="mb-0">
+                In the first instance it may be helpful to contact the person who is working on your case to discuss your concerns and we will do our best to resolve any issues at this stage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight pt-0">
+        <div class="container">
+            <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="content-card">
+                <h2 class="policy-grid-title">Complaints Procedure</h2>
+
+                <div class="policy-block">
+                    <h3 class="mt-3 mb-3">1. Introduction</h3>
+                    <ol class="policy-list-numbered">
+                    <li>
+                        We hope that you do not experience any problems whilst we are acting for you. However, if you do,
+                        the procedure is quite simple. This procedure relates to any complaint you have, that is, an expression
+                        of dissatisfaction about the way in which we have carried out, or failed to carry out, our work which requires a response.
+                    </li>
+                    <li>
+                        We gave you information about how to complain with your initial pack of information but if you need further copies
+                        we will be happy to send them to you. Likewise, if you wish to have a copy of this document just ask us for one.
+                    </li>
+                    <li>
+                        Rachel Sebastian and Co. Solicitors Ltd has overall responsibility for complaints.
+                    </li>
+                    <li>
+                        Once you make your complaint, we will let you know in writing how the complaint will be handled and in what timescale
+                        we anticipate you will be given an initial and/or substantive response.
+                    </li>
+                    <li>
+                        We will record all complaints received from clients and seek to identify the cause of any problem that has arisen.
+                        We will offer any appropriate redress and correct any unsatisfactory procedures.
+                    </li>
+                    </ol>
+                </div>
+
+                <div class="policy-block">
+                    <h3 class="mt-3 mb-3">Step One – Informal</h3>
+                    <p class="mb-0">
+                    Before using the complaints procedure I would encourage you to raise any concerns with me or the lawyer acting for you.
+                    We will be only too happy to discuss the matter with you and either explain what has happened or put it right.
+                    Please do not feel that we will be offended if you question what is going on. Our aim is to provide you with a high standard
+                    of service and if that is not happening we want to know.
+                    </p>
+                </div>
+
+                <div class="policy-block">
+                    <h3 class="mt-3 mb-3">Step Two – Formal</h3>
+                    <p class="mb-0">
+                    If you feel that your problem has not been satisfactorily resolved informally, you should put your complaint in writing
+                    addressed to Rachel Sebastian and Co. Solicitors Ltd (by letter or email) and it will then be investigated and reviewed formally.
+                    You will receive a response as soon as possible and, in any event, within two weeks. We will normally be able to offer you the
+                    opportunity of a face to face discussion to try and resolve matters to your satisfaction.
+                    </p>
+                </div>
+
+                <div class="policy-block">
+                    <h3 class="mt-3 mb-3">Step Three</h3>
+                    <p>
+                    We trust that we will be able to resolve your concerns within steps one and two. However, should you still feel aggrieved
+                    the matter can then be referred to the Legal Ombudsman:
+                    </p>
+                    <ul class="policy-list-clean">
+                    <li>P O Box 6806</li>
+                    <li>Wolverhampton</li>
+                    <li>WV1 9WJ</li>
+                    <li>Tel: 0300 555 0333</li>
+                    <li>Enquiries@legalombudsman.org.uk</li>
+                    </ul>
+                    <p class="mb-0">
+                    Further details are given below, as are the details of how to complain instead to the SRA and the circumstances in which that is appropriate.
+                    </p>
+                </div>
+
+                <div class="policy-block">
+                    <h3 class="mt-3 mb-3">Alternative Complaints Bodies</h3>
+                    <p class="mb-0">
+                    Alternative complaints bodies such as
+                    <a href="http://www.small-claims-mediation.co.uk/" target="_blank" rel="noopener noreferrer" class="link-legal">
+                        www.small-claims-mediation.co.uk
+                    </a>
+                    exist which are competent to deal with complaints about legal services should both you and the firm wish to use such a scheme.
+                    </p>
+                </div>
+
+                <div class="policy-block mb-0">
+                    <h3 class="mt-3 mb-3">What to do if we cannot resolve your complaint</h3>
+                    <p>
+                    The Legal Ombudsman can help you if we are unable to resolve your complaint ourselves.
+                    </p>
+                    <p>
+                    Before accepting a complaint for investigation, the Legal Ombudsman will check that you have tried to resolve your complaint with us first.
+                    If you have, then you must take your complaint to the Legal Ombudsman.
+                    </p>
+                    <p>From 1 April 2023, the time limits for referring a complaint to the Legal Ombudsman will be not later than:</p>
+                    <ul class="policy-list-clean">
+                    <li>one year from the date of the act or omission being complained about; or</li>
+                    <li>one year from the date when the complainant should have realised that there was cause for complaint.</li>
+                    <li>the complaint should be taken to the Ombudsman within six months of receiving final response to the complaint</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="info-panel mb-4">
+                <h3 class="mt-3 mb-3">Legal Ombudsman Contact Details</h3>
+                <ul>
+                    <li><strong>Visit:</strong> www.legalombudsman.org.uk</li>
+                    <li><strong>Call:</strong> 0300 555 0333 between 9am to 5pm</li>
+                    <li><strong>Email:</strong> enquiries@legalombudsman.org.uk</li>
+                    <li><strong>Address:</strong> Legal Ombudsman PO Box 6806, Wolverhampton, WV1 9WJ</li>
+                </ul>
+                </div>
+
+            </div>
+            </div>
+        </div>
+        </section>
+
+    <section class="section-tight pt-0">
+      <div class="container">
+        <div class="content-card">
+          <span class="section-eyebrow">Solicitors Regulation Authority</span>
+          <h2 class="section-title">SOLICITORS REGULATION AUTHORITY (“SRA”)</h2>
+
+          <p class="muted-copy-color-alone">
+            The SRA deal with cases where firms or those the SRA regulate have breached the SRA Principles. Most of the time, complaints about solicitors are about poor service, and therefore should be sent to the Legal Ombudsman. If the Legal Ombudsman thinks your case involves a breach of the SRA Principles, they will refer your case to the SRA. Likewise, if you report a solicitor to the SRA for poor service, the SRA will refer you to the Legal Ombudsman; read the SRA Memorandum of understanding for more information on this arrangement.
+          </p>
+
+          <p class="muted-copy-color-alone">
+            The SRA do not have the power to award compensation for poor service, or to reduce or refund your legal fees.
+          </p>
+
+          <p class="muted-copy-color-alone">
+            However, you should report the matter directly to the SRA if you think a firm or anyone regulated by the SRA has breached an SRA Principle.
+          </p>
+
+          <p class="muted-copy-color-alone">
+            You can also report a firm or someone regulated by the SRA for non-payment of professional fees (such as agent or expert fees) if:
+          </p>
+
+          <ul class="service-list">
+            <li>you have a County Court judgment in respect of the fee, and</li>
+            <li>the judgment relates to the practice in connection with providing a legal service.</li>
+          </ul>
+
+          <p class="muted-copy-color-alone">
+            There are some issues the SRA do not investigate. However, the SRA always consider allegations of dishonesty or discrimination.
+          </p>
+
+          <p class="muted-copy-color-alone">
+            If the SRA have closed a firm and you believe that the firm owes you money, you may be able to make a claim from the SRA Compensation Fund.
+          </p>
+
+          <p class="mb-0">
+            Contact the SRA through their official reporting page
+            <a href="https://www.sra.org.uk/consumers/problems/report-solicitor" target="_blank" rel="noopener noreferrer">
+                https://www.sra.org.uk/consumers/problems/report-solicitor
+            </a>
+          </p>
+
+          <p class="mb-0">
+            A printable version of our complaints procedure is 
+            <a href="https://www.rslegal.co.uk/HowToComplain.pdf" target="_blank" rel="noopener noreferrer">
+                available here
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight pt-0">
+      <div class="container">
+        <div class="print-note">
+          <h3>Need further information?</h3>
+          <p>
+            If you would like more details about the complaints procedure or how complaints are handled, please contact the firm directly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+      <section id="contact" class="section pt-0">
+        <div class="container">
+        <div class="row g-4">
+            <div class="">
+            <span class="section-eyebrow">Contact</span>
+            <h2 class="section-title">Start with a simple conversation.</h2>
+            <p class="muted-copy mb-4">
+            </p>
+            <div class="trust-card">
+                <h3>Get in touch</h3>
+                <p class="text-muted">Reach out to discuss your legal matter and arrange an initial consultation.</p>
+                <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                    <div class="about-card h-100">
+                    <h3 class="mb-2">Phone</h3>
+                    <a class="contact-value" href="tel:01912365308">0191 236 5308</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-card h-100">
+                    <h3 class="mb-2">Email</h3>
+                    <a class="contact-value" href="mailto:info@rslegal.co.uk">info@rslegal.co.uk</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+  </main>
+
+  <footer class="footer mt-5">
+    <div class="container py-4">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h4>Rachel Sebastian & Co.</h4>
+          <p class="mb-0">
+            Professional legal support in Gosforth, Newcastle upon Tyne.
+          </p>
+        </div>
+
+        <div class="col-md-3">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h5>Contact</h5>
+          <p class="mb-1"><a href="tel:01912365308">0191 236 5308</a></p>
+          <p class="mb-0"><a href="mailto:info@rslegal.co.uk">info@rslegal.co.uk</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="d-flex flex-column flex-md-row justify-content-between">
+        <p class="mb-0">© 2026 Rachel Sebastian & Co. Solicitors</p>
+        <p class="mb-0">All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
